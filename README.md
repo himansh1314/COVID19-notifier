@@ -1,5 +1,8 @@
 # COVID19-notifier
 This project scrapes data of COVID19  cases in India and sends emails at time to time basis.
+Requirements:
+Requires BeautifulSoup library to be installed
+You can do so by typing ```pip install beautifulsoup4``` in your command line.
 Command line arguments:
 ```
 --emails: Path to text file where all the emails are stored
