@@ -20,13 +20,21 @@ def load_ids(path):
     Arguments: path to text file
     Returns: List containing email ids
     """
-    users = open(path, 'r')
     list1 = []
-    for line in users:
-        list1.append(line)
-    for i in range(0,len(list1)-1):
-        list1[i] = list1[i][:-1]
-    return list1
+    if path[-4:] == '.txt':
+        try:
+            users = open(path, 'r')
+        except FileNotFoundError:
+            print('Please input a valid directory')
+
+        for line in users:
+            list1.append(line)
+        for i in range(0,len(list1)-1):
+            list1[i] = list1[i][:-1]
+        return list1
+    else:
+        list1 = path.strip().split(',')
+        return list1
     
 def login(userID, password):
     """
